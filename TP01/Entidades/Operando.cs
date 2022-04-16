@@ -69,7 +69,7 @@ namespace Entidades
             }
             else
             {
-                return "numero invalido";
+                return "numero invalido ";
             }
         }
 
