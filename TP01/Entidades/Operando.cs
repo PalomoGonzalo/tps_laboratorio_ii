@@ -71,8 +71,6 @@ namespace Entidades
             {
                 return "numero invalido";
             }
-
-
         }
 
 
@@ -105,6 +103,32 @@ namespace Entidades
             }
         }
 
+        public static double operator +(Operando n1, Operando n2)
+        {
+            return n1.numero + n2.numero;
+
+        }
+        public static double operator -(Operando n1, Operando n2)
+        {
+            return n1.numero - n2.numero;
+
+        }
+        public static double operator *(Operando n1, Operando n2)
+        {
+            return n1.numero * n2.numero;
+
+        }
+
+        public static double operator /(Operando n1, Operando n2)
+        {
+
+            if (n2.numero == 0)
+            {
+                return double.MinValue;
+            }
+            return n1.numero / n2.numero;
+
+        }
 
 
 

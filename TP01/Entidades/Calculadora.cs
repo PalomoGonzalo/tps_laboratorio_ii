@@ -24,7 +24,7 @@ namespace Entidades
 
         }
 
-        public static double Operar(double num1, double num2, char operador)
+        public static double Operar(Operando num1, Operando num2, char operador)
         {
             double resultado=0;
             switch (ValidarOperador(operador))
