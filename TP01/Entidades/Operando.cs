@@ -48,20 +48,20 @@ namespace Entidades
             }
         }
 
-        private bool EsBinario(string binario)
+        private static bool EsBinario(string binario)
         {
-            foreach (var item in binario)
+            for (int i = 0; i < binario.Length; i++)
             {
-                if (item == '1' || item == '0')
+                if (binario[i] == '1' || binario[i] == '0')
+                { 
                     return true;
-                else
-                    return false;
+                }
             }
             return false;
         }
 
 
-        public string BinarioDecimal(string binario)
+        public static string BinarioDecimal(string binario)
         {
             int resultadoBinDecimal;
 
@@ -78,7 +78,7 @@ namespace Entidades
 
 
 
-        public string DecimalBinario(double numero)
+        public static string DecimalBinario(double numero)
         {
             if (numero > 0)
             {
@@ -92,7 +92,7 @@ namespace Entidades
 
         }
 
-        public string DecimalBinario(string numero)
+        public static string DecimalBinario(string numero)
         {
             double resultado;
             if (double.TryParse(numero, out resultado))

@@ -95,6 +95,7 @@
             this.btnCerrar.TabIndex = 3;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // txtNumero2
             // 
@@ -135,6 +136,7 @@
             this.btnConvertirABinario.TabIndex = 7;
             this.btnConvertirABinario.Text = "Convertir a Binario";
             this.btnConvertirABinario.UseVisualStyleBackColor = true;
+            this.btnConvertirABinario.Click += new System.EventHandler(this.btnConvertirABinario_Click);
             // 
             // btonConverADecimal
             // 
@@ -145,6 +147,7 @@
             this.btonConverADecimal.TabIndex = 8;
             this.btonConverADecimal.Text = "Convertir a Decimal";
             this.btonConverADecimal.UseVisualStyleBackColor = true;
+            this.btonConverADecimal.Click += new System.EventHandler(this.btonConverADecimal_Click);
             // 
             // FormCalculadora
             // 
@@ -166,6 +169,7 @@
             this.MinimizeBox = false;
             this.Name = "FormCalculadora";
             this.Text = "Calculadora De Palomo Gonzalo Curso 2°D";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCalculadora_FormClosing);
             this.Load += new System.EventHandler(this.MiCalculadora_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
