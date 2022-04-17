@@ -29,9 +29,7 @@ namespace Entidades
             double resultado=0;
             switch (ValidarOperador(operador))
             {
-                case '+':
-                    resultado= num1 + num2;
-                    break;
+                
                 case '-':
                     resultado= num1 - num2;
                     break;
@@ -40,6 +38,9 @@ namespace Entidades
                     break ;
                 case '*':
                     resultado= num1 * num2;
+                    break;
+                default :
+                    resultado = num1 + num2;
                     break;
             }
             return resultado;

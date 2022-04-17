@@ -5,7 +5,6 @@ C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP01\MiCalculadora\
 C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP01\MiCalculadora\bin\Debug\net5.0-windows\MiCalculadora.dll
 C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP01\MiCalculadora\bin\Debug\net5.0-windows\MiCalculadora.pdb
 C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP01\MiCalculadora\obj\Debug\net5.0-windows\MiCalculadora.csproj.AssemblyReference.cache
-C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP01\MiCalculadora\obj\Debug\net5.0-windows\MiCalculadora.Form1.resources
 C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP01\MiCalculadora\obj\Debug\net5.0-windows\MiCalculadora.csproj.GenerateResource.cache
 C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP01\MiCalculadora\obj\Debug\net5.0-windows\MiCalculadora.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP01\MiCalculadora\obj\Debug\net5.0-windows\MiCalculadora.AssemblyInfoInputs.cache
@@ -19,3 +18,4 @@ C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP01\MiCalculadora\
 C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP01\MiCalculadora\bin\Debug\net5.0-windows\Entidades.dll
 C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP01\MiCalculadora\bin\Debug\net5.0-windows\Entidades.pdb
 C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP01\MiCalculadora\obj\Debug\net5.0-windows\MiCalculadora.csproj.CopyComplete
+C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP01\MiCalculadora\obj\Debug\net5.0-windows\MiCalculadora.FormCalculadora.resources

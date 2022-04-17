@@ -2,6 +2,9 @@
 
 namespace Entidades
 {
+
+
+
     public class Operando
     {
         private double numero;
