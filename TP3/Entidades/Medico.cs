@@ -2,33 +2,49 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace Entidades
 {
-    public enum ETipoMedico
-    {
-        Cardiologo,
-        Clinico,
-        Neurologo,
-    }
-
+  
     public class Medico : Personal
     {
-       private ETipoMedico tipoMedico;
-
-
         
-        public Medico(int id, string nombre, string password, ETipoMedico tipoMedico) : base(id, nombre, password)
+        private string tipoMedico;
+
+
+        public Medico()
+        { 
+        
+        }
+    
+
+        public Medico(int id, string nombre, string password, string tipoMedico) : base(id, nombre, password)
         {
             this.TipoMedico = tipoMedico;
+
         }
 
-        public ETipoMedico TipoMedico { get => tipoMedico; set => tipoMedico = value; }
+        public string TipoMedico { get => tipoMedico; set => tipoMedico = value; }
+       
 
         public override Cliente verHistorialCliente(List<Cliente> listaClientes, int dniCliente)
         {
             throw new NotImplementedException();
         }
+        public static bool operator +(int s1, Medico medico)
+        {
+            if (s1 == medico.Id)
+            {
+                return true;
+            }
+            return false;
+        }
+
+
+
+
     }
 }

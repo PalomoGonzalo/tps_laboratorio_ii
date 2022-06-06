@@ -7,24 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Entidades;
 
 namespace UIClinica
 {
-    public partial class Form1 : Form
+    public partial class UserControlBlank : UserControl
     {
-        public Form1()
+        public UserControlBlank()
         {
             InitializeComponent();
-           
-           
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-           
-            SerializadorGenerico<List<Cliente>>.EscribirXml(ManejadorDeDatos.ClienteList , "XmlCliente");
-
         }
     }
 }
