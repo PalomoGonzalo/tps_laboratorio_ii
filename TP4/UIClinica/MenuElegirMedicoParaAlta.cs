@@ -25,6 +25,7 @@ namespace UIClinica
 
         private void btn_buscarMedico_Click(object sender, EventArgs e)
         {
+            dtvg_MedicosLista.Rows.Clear();
             if (cmb_TipoMedico.SelectedIndex != -1)
             {
                 agregarAldataGridMedicos(cmb_TipoMedico.SelectedItem.ToString());

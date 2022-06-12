@@ -30,6 +30,7 @@ namespace UIClinica
 
         private void btn_buscarCliente_Click(object sender, EventArgs e)
         {
+            dtvg_MedicosLista.Rows.Clear();
             if (!agregarAldataGridCliente(txt_dni.Text))
             {
                 MessageBox.Show("Cliente no existe, dar de alta");

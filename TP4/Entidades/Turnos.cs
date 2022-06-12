@@ -27,6 +27,8 @@ namespace Entidades
         private int dniCliente;
         private int nroTurno;
 
+
+
         public Turnos(int nroTurno,int idMedico, int hora, DateTime fechaTurno, int dniCliente)
         {
             this.NroTurno= nroTurno;

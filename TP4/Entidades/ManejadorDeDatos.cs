@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace Entidades
 {
@@ -19,7 +20,7 @@ namespace Entidades
             PersonalList = new List<Personal>();
             TurnosList = new List<Turnos>();
 
-            turnosList.Add(new Turnos(1,1, 9,new DateTime(2022,06,06), 1));
+            //turnosList.Add(new Turnos(1,1, 9,new DateTime(2022,06,06), 1));
         }
 
         public static List<Cliente> ClienteList { get => clienteList; set => clienteList = value; }
@@ -89,6 +90,19 @@ namespace Entidades
 
             }
             return null;
+        }
+        public static void CargarListaMedicoASql()
+        {
+            foreach (var item in ManejadorDeDatos.personalList)
+            {
+                if (item is Medico medico)
+                { 
+                
+                    SqlConexion.GuardarMedicos(medico);
+                }
+            }
+        
+        
         }
 
 

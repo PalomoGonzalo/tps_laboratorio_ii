@@ -5,9 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 using Entidades;
+
 
 namespace UIClinica
 {
@@ -18,22 +19,15 @@ namespace UIClinica
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private async void Login_Load(object sender, EventArgs e)
         {
             ManejadorDeDatos.ClienteList = SerializadorGenerico<List<Cliente>>.LeerJson("JsonCliente");
             ManejadorDeDatos.PersonalList = SerializadorGenerico<List<Personal>>.LeerXml("XmlPersonal");
+            SqlConexion.EliminarTodoLosMedicos();
+            ManejadorDeDatos.TurnosList.Sort();
+            Hilos.CargarHilos();
 
-            Task task = new Task(SqlConexion.CargarTurnosSql);
-            try
-            {
-               task.Start();
-            }
-            catch (Exception ex)
-            {
-
-                Console.WriteLine(ex.Message);
-            }
-            
+           
            
         }
 

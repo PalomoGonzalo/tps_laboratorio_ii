@@ -2,7 +2,7 @@
 <ArrayOfPersonal xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Personal xsi:type="Medico">
     <Id>1</Id>
-    <Nombre>Matias</Nombre>
+    <Nombre>GONZALO</Nombre>
     <Password>123</Password>
     <TipoMedico>Clinico</TipoMedico>
   </Personal>
