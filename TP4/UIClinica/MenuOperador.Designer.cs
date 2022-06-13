@@ -30,17 +30,19 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_AltaTurno = new System.Windows.Forms.Button();
-            this.btn_listaInventario = new System.Windows.Forms.Button();
+            this.btn_darAltaCliente = new System.Windows.Forms.Button();
             this.btn_listaEmpleados = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btn_AltaTurno);
-            this.panel1.Controls.Add(this.btn_listaInventario);
+            this.panel1.Controls.Add(this.btn_darAltaCliente);
             this.panel1.Controls.Add(this.btn_listaEmpleados);
             this.panel1.Location = new System.Drawing.Point(12, 60);
             this.panel1.Name = "panel1";
@@ -62,19 +64,19 @@
             this.btn_AltaTurno.UseVisualStyleBackColor = false;
             this.btn_AltaTurno.Click += new System.EventHandler(this.btn_AltaTurno_Click);
             // 
-            // btn_listaInventario
+            // btn_darAltaCliente
             // 
-            this.btn_listaInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(129)))));
-            this.btn_listaInventario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_listaInventario.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_listaInventario.ForeColor = System.Drawing.Color.White;
-            this.btn_listaInventario.Location = new System.Drawing.Point(14, 331);
-            this.btn_listaInventario.Name = "btn_listaInventario";
-            this.btn_listaInventario.Size = new System.Drawing.Size(169, 39);
-            this.btn_listaInventario.TabIndex = 12;
-            this.btn_listaInventario.Text = "Lista inventario";
-            this.btn_listaInventario.UseVisualStyleBackColor = false;
-            this.btn_listaInventario.Visible = false;
+            this.btn_darAltaCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(129)))));
+            this.btn_darAltaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_darAltaCliente.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_darAltaCliente.ForeColor = System.Drawing.Color.White;
+            this.btn_darAltaCliente.Location = new System.Drawing.Point(14, 333);
+            this.btn_darAltaCliente.Name = "btn_darAltaCliente";
+            this.btn_darAltaCliente.Size = new System.Drawing.Size(169, 39);
+            this.btn_darAltaCliente.TabIndex = 12;
+            this.btn_darAltaCliente.Text = "Alta Cliente";
+            this.btn_darAltaCliente.UseVisualStyleBackColor = false;
+            this.btn_darAltaCliente.Click += new System.EventHandler(this.btn_darAltaCliente_Click);
             // 
             // btn_listaEmpleados
             // 
@@ -114,19 +116,31 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "OPERADOR:";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(391, 132);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 25;
+            this.dataGridView1.Size = new System.Drawing.Size(650, 397);
+            this.dataGridView1.TabIndex = 15;
+            // 
             // MenuOperador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(58)))), ((int)(((byte)(81)))));
             this.ClientSize = new System.Drawing.Size(1098, 647);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Name = "MenuOperador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuOperador";
             this.Load += new System.EventHandler(this.MenuOperador_Load);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,8 +151,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_AltaTurno;
-        private System.Windows.Forms.Button btn_listaInventario;
+        private System.Windows.Forms.Button btn_darAltaCliente;
         private System.Windows.Forms.Button btn_listaEmpleados;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

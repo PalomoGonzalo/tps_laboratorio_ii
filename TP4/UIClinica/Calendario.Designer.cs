@@ -248,6 +248,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.PanelControl);
             this.Name = "Calendario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calendario";
             this.Load += new System.EventHandler(this.Calendario_Load);
             this.ResumeLayout(false);

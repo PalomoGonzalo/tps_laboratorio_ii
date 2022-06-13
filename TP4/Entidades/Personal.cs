@@ -7,7 +7,7 @@ namespace Entidades
 {
     [XmlInclude(typeof(Medico))]
     [XmlInclude(typeof(Operador))]
-    public abstract class Personal:ICancelarTurno
+    public abstract class Personal:iDarBajaTurno
     {
         protected int id;
         protected string nombre;
@@ -27,7 +27,7 @@ namespace Entidades
         public string Nombre { get => nombre; set => nombre = value; }
         public string Password { get => password; set => password = value; }
 
-        public bool CancelarTurno(int nroTurno)
+        public bool DarBajaTurno(int nroTurno)
         {
             foreach (var item in ManejadorDeDatos.TurnosList)
             {

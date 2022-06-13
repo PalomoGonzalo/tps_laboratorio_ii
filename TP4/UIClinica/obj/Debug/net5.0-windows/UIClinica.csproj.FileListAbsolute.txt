@@ -52,7 +52,6 @@ C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP4\UIClinica\obj\D
 C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP4\UIClinica\obj\Debug\net5.0-windows\UIClinica.pdb
 C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP4\UIClinica\obj\Debug\net5.0-windows\UIClinica.genruntimeconfig.cache
 C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP4\UIClinica\obj\Debug\net5.0-windows\ref\UIClinica.dll
-C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP4\UIClinica\obj\Debug\net5.0-windows\UIClinica.MenuCancelarTurno.resources
 C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP4\UIClinica\obj\Debug\net5.0-windows\UIClinica.MenuElegirCliente.resources
 C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP4\UIClinica\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
 C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP4\UIClinica\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
@@ -60,3 +59,7 @@ C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP4\UIClinica\bin\D
 C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP4\UIClinica\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
 C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP4\UIClinica\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP4\UIClinica\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP4\UIClinica\obj\Debug\net5.0-windows\UIClinica.MenuAtenderCliente.resources
+C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP4\UIClinica\obj\Debug\net5.0-windows\UIClinica.MenuMedico.resources
+C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP4\UIClinica\obj\Debug\net5.0-windows\UIClinica.MenuAltaCliente.resources
+C:\Users\mati_\Documents\tp_laboratorio_2\tps_laboratorio_ii\TP4\UIClinica\obj\Debug\net5.0-windows\UIClinica.MenuCliente.resources

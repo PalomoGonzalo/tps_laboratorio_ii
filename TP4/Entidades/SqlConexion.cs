@@ -39,13 +39,40 @@ namespace Entidades
             }
             catch (Exception)
             {
-                throw;
+                throw new Exception($"Error en el archivo en la base de datos");
             }
             finally
             {
                 connection.Close();
             }
         }
+
+        public static void GuardarClientesASql(Cliente cliente)
+        {
+            try
+            {
+                command.Parameters.Clear();
+                connection.Open();
+                command.CommandText = $"INSERT INTO CLIENTES VALUES (@DNI,@NOMBRE,@EDAD)";
+                command.Parameters.AddWithValue("@DNI", cliente.Dni);
+                command.Parameters.AddWithValue("@NOMBRE", cliente.Nombre);
+                command.Parameters.AddWithValue("@EDAD", cliente.Edad);
+                
+
+                int rows = command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw new Exception($"Error en el archivo en la base de datos");
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+
+
 
         public static void CargarTurnosSql()
         {
@@ -53,19 +80,18 @@ namespace Entidades
             {
                 connection.Open();
                 command.CommandText = "SELECT * FROM TURNOS";
-                
-
                 using (SqlDataReader dataReader = command.ExecuteReader())
                 {
                     while (dataReader.Read())
                     {
                         ManejadorDeDatos.TurnosList.Add(new Turnos(Convert.ToInt32(dataReader["NROTURNO"]), Convert.ToInt32(dataReader["IDMEDICO"]), Convert.ToInt32(dataReader["HORA"]), Convert.ToDateTime(dataReader["FECHA_TURNO"]), Convert.ToInt32(dataReader["DNI_CLIENTE"])));
-                    }
+                    }     
                 }
+
             }
             catch (Exception)
             {
-                throw;
+                throw new Exception($"Error en el archivo en la base de datos");
             }
             finally
             { 
@@ -73,6 +99,9 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Elimino todo de la base de datos, ya que agrego el archivo xml serializado, para no sobrecargar la base de datos
+        /// </summary>
         public static void EliminarTodoLosMedicos()
         {
 
@@ -84,7 +113,27 @@ namespace Entidades
             }
             catch (Exception)
             {
-                throw;
+                throw new Exception($"Error en el archivo en la base de datos");
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+
+        public static void EliminarTodoLosClientes()
+        {
+
+            try
+            {
+                connection.Open();
+                command.CommandText = $"DELETE FROM CLIENTES";
+                int rows = command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw new Exception($"Error en el archivo en la base de datos");
             }
             finally
             {

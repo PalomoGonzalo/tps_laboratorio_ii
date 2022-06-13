@@ -7,16 +7,25 @@
     <Compile Update="Login.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="MenuAltaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="MenuAltaTurno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="MenuCancelarTurno.cs">
+    <Compile Update="MenuAtenderCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MenuCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="MenuElegirCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="MenuElegirMedicoParaAlta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MenuMedico.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="MenuOperador.cs">

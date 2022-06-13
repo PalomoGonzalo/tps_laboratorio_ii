@@ -19,15 +19,13 @@ namespace Entidades
             ClienteList = new List<Cliente>();
             PersonalList = new List<Personal>();
             TurnosList = new List<Turnos>();
-
-            //turnosList.Add(new Turnos(1,1, 9,new DateTime(2022,06,06), 1));
         }
 
         public static List<Cliente> ClienteList { get => clienteList; set => clienteList = value; }
         public static List<Personal> PersonalList { get => personalList; set => personalList = value; }
         public static List<Turnos> TurnosList { get => turnosList; set => turnosList = value; }
 
-        public static Medico checkearLoginMedico(string password, int id)
+        public static Medico CheckearLoginMedico(string password, int id)
         {
             foreach (var item in personalList)
             {
@@ -44,7 +42,7 @@ namespace Entidades
 
             return null;
         }
-        public static Operador checkearLoginOperador(string password, int id)
+        public static Operador CheckearLoginOperador(string password, int id)
         {
             foreach (var item in personalList)
             {
@@ -61,6 +59,20 @@ namespace Entidades
 
             return null;
         }
+        public static Cliente CheckearLoginCliente(int dni)
+        {
+            foreach (var item in clienteList)
+            {
+                if (item is Cliente cliente)
+                {
+                    if (cliente.Dni == dni)
+                    {
+                        return cliente;
+                    }
+                }
+            }
+            return null;
+        }
 
         public static bool PasarStringNumeros(string cadena, out int retorno)
         {
@@ -75,7 +87,7 @@ namespace Entidades
             }
 
         }
-        public static Medico buscarPorIdMedico(int id)
+        public static Medico BuscarPorIdMedico(int id)
         {
             foreach (var item in personalList)
             {
@@ -91,7 +103,24 @@ namespace Entidades
             }
             return null;
         }
-        public static void CargarListaMedicoASql()
+
+        public static Cliente BuscarPorDniCliente(int dni)
+        {
+            foreach (var item in clienteList)
+            {
+                if (item is Cliente cliente)
+                {
+                    if (dni + cliente)
+                    {
+                        return cliente;
+
+                    }
+                }
+
+            }
+            return null;
+        }
+        public static void GuardarListaMedicoASql()
         {
             foreach (var item in ManejadorDeDatos.personalList)
             {
@@ -103,6 +132,47 @@ namespace Entidades
             }
         
         
+        }
+
+        public static void GuardarListaClientesASql()
+        {
+            foreach (var item in ManejadorDeDatos.clienteList)
+            {
+                if (item is Cliente cliente)
+                {
+
+                    SqlConexion.GuardarClientesASql(cliente);
+                }
+            }
+
+
+        }
+
+
+        public static bool VerificarClienteExiste(int dni)
+        {
+            foreach (var item in ManejadorDeDatos.ClienteList)
+            {
+                if (item.Dni == dni)
+                {
+                    return true;
+                }
+
+            }
+
+            return false;
+        }
+        public static int ObtenerUltimoTurno()
+        {
+            int ultimoTurno = 0;
+            foreach (var item in ManejadorDeDatos.turnosList)
+            {
+                if (ultimoTurno <item.NroTurno)
+                {
+                    ultimoTurno = item.NroTurno;
+                }
+            }
+            return ultimoTurno;
         }
 
 

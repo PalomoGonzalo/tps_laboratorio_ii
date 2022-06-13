@@ -19,14 +19,16 @@ namespace UIClinica
         int anio;
         
         Medico medico;
+        Cliente cliente;
         public Calendario()
         {
             InitializeComponent();
         }
 
-        public Calendario(Medico medico) : this()
+        public Calendario(Medico medico, Cliente cliente) : this()
         {
             this.medico = medico;
+            this.cliente = cliente;
             
         }
         private void Calendario_Load(object sender, EventArgs e)
@@ -61,7 +63,7 @@ namespace UIClinica
             }
             for (int i = 1; i <= days; i++)
             {
-                UserControlDays ucdays = new UserControlDays(medico);
+                UserControlDays ucdays = new UserControlDays(medico,cliente);
                 ucdays.days(i);
                 PanelControl.Controls.Add(ucdays);
             }
@@ -75,7 +77,7 @@ namespace UIClinica
             mesEstatico = mes;
             anioEstatico = anio;
             lbl_fecha.Text = nombreFecha;
-            int diasPorSemanas = Convert.ToInt32(inicioDeMes.DayOfWeek.ToString("D"));
+            int diasPorSemanas = Convert.ToInt32(inicioDeMes.DayOfWeek.ToString("d"));
 
             for (int i = 0; i < diasPorSemanas; i++)
             {
@@ -84,7 +86,7 @@ namespace UIClinica
             }
             for (int i = 1; i <= days; i++)
             {
-                UserControlDays ucdays = new UserControlDays(medico);
+                UserControlDays ucdays = new UserControlDays(medico,cliente);
                 ucdays.days(i);
                 PanelControl.Controls.Add(ucdays);
             }

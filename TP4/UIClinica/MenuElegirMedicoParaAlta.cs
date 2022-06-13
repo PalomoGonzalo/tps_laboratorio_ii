@@ -15,10 +15,11 @@ namespace UIClinica
     public partial class MenuElegirMedicoParaAlta : Form
     {
         Medico medico;
-        
-        public MenuElegirMedicoParaAlta()
+        Cliente cliente;
+        public MenuElegirMedicoParaAlta(Cliente cliente)
         {
             InitializeComponent();
+            this.cliente = cliente;
         }
 
 
@@ -65,13 +66,13 @@ namespace UIClinica
             string legajoString = Interaction.InputBox("ingrese el legajo del medico para verificar el calendario");
             if (ManejadorDeDatos.PasarStringNumeros(legajoString, out int id))
             {
-                medico = ManejadorDeDatos.buscarPorIdMedico(id);
+                medico = ManejadorDeDatos.BuscarPorIdMedico(id);
 
                 if (medico != null)
                 {
                     if (medico.TipoMedico == cmb_TipoMedico.SelectedItem.ToString())
                     {
-                        Calendario frmCalendario = new Calendario(medico);
+                        Calendario frmCalendario = new Calendario(medico,cliente);
                         frmCalendario.ShowDialog();
                         this.Close();
                     }

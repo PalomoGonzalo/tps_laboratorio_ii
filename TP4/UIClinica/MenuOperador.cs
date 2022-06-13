@@ -32,6 +32,13 @@ namespace UIClinica
         private void MenuOperador_Load(object sender, EventArgs e)
         {
             label1.Text = operador.Nombre.ToUpper();
+            dataGridView1.DataSource = ManejadorDeDatos.TurnosList;
+        }
+
+        private void btn_darAltaCliente_Click(object sender, EventArgs e)
+        {
+            MenuAltaCliente menuAltaCliente = new MenuAltaCliente();
+            menuAltaCliente.ShowDialog();
         }
     }
 }

@@ -21,5 +21,16 @@ namespace Entidades
         {
             throw new NotImplementedException();
         }
+
+        public bool agregarCliente(Cliente cliente)
+        {
+
+            if (cliente != null)
+            {
+                ManejadorDeDatos.ClienteList.Add(cliente);
+                return true;
+            }
+            return false;
+        }
     }
 }

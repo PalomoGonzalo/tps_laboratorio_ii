@@ -7,18 +7,7 @@ using System.Threading.Tasks;
 namespace Entidades
 {
 
-    public enum Eturnos 
-    {
-        Ocho=8,
-        Nueve=9,
-        Diez=10,
-        Once=11,
-        Doce=12,
-        Trece=13,
-        Catorce=14,
-        Quince=15,
-        Diecises=16,
-    }
+   
     public class Turnos
     {
         private int idMedico;
@@ -54,5 +43,6 @@ namespace Entidades
             }
             return false;
         }
+
     }
 }

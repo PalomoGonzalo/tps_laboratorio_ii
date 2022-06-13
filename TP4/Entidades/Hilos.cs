@@ -25,7 +25,7 @@ namespace Entidades
 
             await task;
 
-            Task task2 = new Task(ManejadorDeDatos.CargarListaMedicoASql);
+            Task task2 = new Task(ManejadorDeDatos.GuardarListaMedicoASql);
             try
             {
 
@@ -36,6 +36,10 @@ namespace Entidades
 
                 throw;
             }
+            await task2;
+            Task task3=new Task(ManejadorDeDatos.GuardarListaClientesASql);
+
+            task3.Start();  
 
         }
     }

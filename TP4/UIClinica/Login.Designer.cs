@@ -36,6 +36,7 @@
             this.btn_loggear = new System.Windows.Forms.Button();
             this.txt_password = new System.Windows.Forms.TextBox();
             this.txt_legajo = new System.Windows.Forms.TextBox();
+            this.btn_clienteLog = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_salir
@@ -141,12 +142,26 @@
             this.txt_legajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_legajo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_legajo_KeyPress);
             // 
+            // btn_clienteLog
+            // 
+            this.btn_clienteLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(129)))));
+            this.btn_clienteLog.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_clienteLog.ForeColor = System.Drawing.Color.White;
+            this.btn_clienteLog.Location = new System.Drawing.Point(99, 374);
+            this.btn_clienteLog.Name = "btn_clienteLog";
+            this.btn_clienteLog.Size = new System.Drawing.Size(96, 23);
+            this.btn_clienteLog.TabIndex = 37;
+            this.btn_clienteLog.Text = "Cliente log";
+            this.btn_clienteLog.UseVisualStyleBackColor = false;
+            this.btn_clienteLog.Click += new System.EventHandler(this.btn_clienteLog_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(58)))), ((int)(((byte)(81)))));
             this.ClientSize = new System.Drawing.Size(280, 642);
+            this.Controls.Add(this.btn_clienteLog);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.btn_autoLogMedico);
             this.Controls.Add(this.btn_autoOperador);
@@ -156,6 +171,7 @@
             this.Controls.Add(this.txt_password);
             this.Controls.Add(this.txt_legajo);
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
@@ -173,5 +189,6 @@
         private System.Windows.Forms.Button btn_loggear;
         private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.TextBox txt_legajo;
+        private System.Windows.Forms.Button btn_clienteLog;
     }
 }

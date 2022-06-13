@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public interface ICancelarTurno
+    public interface iDarBajaTurno
     {
 
-        bool CancelarTurno(int nroTurno);
+        bool DarBajaTurno(int nroTurno);
     }
 }

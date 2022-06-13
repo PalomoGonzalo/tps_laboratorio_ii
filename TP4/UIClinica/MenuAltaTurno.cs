@@ -15,14 +15,16 @@ namespace UIClinica
     {
         Medico medico;
         DateTime time;
+        Cliente cliente;
         public MenuAltaTurno()
         {
             InitializeComponent();
         }
-        public MenuAltaTurno(Medico medico,DateTime time):this()
+        public MenuAltaTurno(Medico medico, DateTime time, Cliente cliente) : this()
         {
             this.time = time;
             this.medico = medico;
+            this.cliente = cliente;
         }
 
         private void MenuAltaTurno_Load(object sender, EventArgs e)
@@ -30,7 +32,7 @@ namespace UIClinica
             cargarBoton();
             cargarEstadoHorarioDisponible();
             lbl_especialidad.Text = medico.TipoMedico;
-            lbl_fecha.Text=time.ToShortDateString();
+            lbl_fecha.Text = time.ToShortDateString();
             lbl_nombreMedico.Text = medico.Nombre;
         }
 
@@ -58,7 +60,8 @@ namespace UIClinica
                     if (ExisteHoraraCargada(boton.Text))
                     {
                         boton.Enabled = false;
-                    
+                        boton.BackColor = Color.Red;
+
                     }
                 }
 
@@ -71,15 +74,21 @@ namespace UIClinica
         {
             var control = sender as Button;
             string descripcionBoton = control.Text;
-          
-            
+            ManejadorDeDatos.PasarStringNumeros(descripcionBoton, out int hora);
+            int nroTurno = ManejadorDeDatos.ObtenerUltimoTurno() + 1;
+
+            Turnos turnoNuevo = new Turnos(nroTurno,medico.Id,hora,time,cliente.Dni);
+            ManejadorDeDatos.TurnosList.Add(turnoNuevo);
+            MessageBox.Show($"Se dio de alta correctamente el turno {turnoNuevo.NroTurno}");
+            this.Close();
+
         }
 
         private Boolean ExisteHoraraCargada(string butonNombre)
         {
             foreach (var item in ManejadorDeDatos.TurnosList)
             {
-                if(item.IdMedico==medico.Id)
+                if (item.IdMedico == medico.Id)
                 {
                     if (item.FechaTurno == time)
                     {
@@ -87,17 +96,12 @@ namespace UIClinica
                         {
                             return true;
                         }
-
-
                     }
-
                 }
-                
-
             }
 
             return false;
         }
-    
+
     }
 }

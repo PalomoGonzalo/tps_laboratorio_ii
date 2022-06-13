@@ -24,7 +24,8 @@ namespace UIClinica
             ManejadorDeDatos.ClienteList = SerializadorGenerico<List<Cliente>>.LeerJson("JsonCliente");
             ManejadorDeDatos.PersonalList = SerializadorGenerico<List<Personal>>.LeerXml("XmlPersonal");
             SqlConexion.EliminarTodoLosMedicos();
-            ManejadorDeDatos.TurnosList.Sort();
+            SqlConexion.EliminarTodoLosClientes();
+            
             Hilos.CargarHilos();
 
            
@@ -55,8 +56,9 @@ namespace UIClinica
         {
             if (int.TryParse(txt_legajo.Text, out int id))
             { 
-                Medico miMedico=ManejadorDeDatos.checkearLoginMedico(this.txt_password.Text, id);
-                Operador miOperador=ManejadorDeDatos.checkearLoginOperador(this.txt_password.Text, id);
+                Medico miMedico=ManejadorDeDatos.CheckearLoginMedico(this.txt_password.Text, id);
+                Operador miOperador=ManejadorDeDatos.CheckearLoginOperador(this.txt_password.Text, id);
+                Cliente miCliente = ManejadorDeDatos.CheckearLoginCliente(id);
                 if (miOperador != null)
                 {
                     MenuOperador frmMenuOperador = new MenuOperador(miOperador);
@@ -66,7 +68,14 @@ namespace UIClinica
                 else if (miMedico != null)
                 {
 
-                    MessageBox.Show($"{miMedico.Nombre}");
+                    MenuMedico medico = new MenuMedico(miMedico);
+                    medico.ShowDialog();
+                }
+                else if (miCliente != null)
+                {
+                    MenuCliente cliente = new MenuCliente(miCliente); 
+                    cliente.ShowDialog();   
+                   
                 }
                 else
                 {
@@ -74,6 +83,11 @@ namespace UIClinica
                 }
             
             }
+        }
+
+        private void btn_clienteLog_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

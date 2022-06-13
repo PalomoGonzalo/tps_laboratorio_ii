@@ -172,6 +172,7 @@
             this.Controls.Add(this.btn_buscarCliente);
             this.Controls.Add(this.lbl_codigoCliente);
             this.Name = "MenuElegirCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuElegirCliente";
             this.Load += new System.EventHandler(this.MenuElegirCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtvg_MedicosLista)).EndInit();

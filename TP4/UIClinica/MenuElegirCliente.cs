@@ -13,8 +13,9 @@ namespace UIClinica
 {
     public partial class MenuElegirCliente : Form
     {
+        int dniCliente;
+        bool flagCliente = false;
 
-        bool flagCliente=false; 
         public MenuElegirCliente()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace UIClinica
         private void btn_buscarCliente_Click(object sender, EventArgs e)
         {
             dtvg_MedicosLista.Rows.Clear();
-            if (!agregarAldataGridCliente(txt_dni.Text))
+            if (agregarAldataGridCliente(txt_dni.Text) == 0)
             {
                 MessageBox.Show("Cliente no existe, dar de alta");
             }
@@ -41,8 +42,9 @@ namespace UIClinica
             }
         }
 
-        private bool agregarAldataGridCliente(string dniText)
+        private int agregarAldataGridCliente(string dniText)
         {
+            dniCliente = 0;
             foreach (var item in ManejadorDeDatos.ClienteList)
             {
                 ManejadorDeDatos.PasarStringNumeros(dniText, out int dniInt);
@@ -52,12 +54,12 @@ namespace UIClinica
                     dtvg_MedicosLista.Rows[n].Cells[0].Value = item.Nombre;
                     dtvg_MedicosLista.Rows[n].Cells[1].Value = item.Dni.ToString();
                     dtvg_MedicosLista.Rows[n].Cells[2].Value = item.Edad.ToString();
-                    return true;
+                    dniCliente = item.Dni;
 
                 }
             }
 
-            return false;
+            return dniCliente;
         }
 
 
@@ -66,7 +68,8 @@ namespace UIClinica
         {
             if (flagCliente == true)
             {
-                MenuElegirMedicoParaAlta menuElegirMedicoParaAlta = new MenuElegirMedicoParaAlta();
+                Cliente cliente = ManejadorDeDatos.BuscarPorDniCliente(dniCliente);
+                MenuElegirMedicoParaAlta menuElegirMedicoParaAlta = new MenuElegirMedicoParaAlta(cliente);
                 menuElegirMedicoParaAlta.ShowDialog();
                 this.Close();
             }
