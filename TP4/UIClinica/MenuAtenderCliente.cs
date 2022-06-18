@@ -26,6 +26,13 @@ namespace UIClinica
 
         private void MenuAtenderCliente_Load(object sender, EventArgs e)
         {
+            
+            CargarAlDataGrid();
+        }
+
+        private void CargarAlDataGrid()
+        {
+            dtvg_turnosLista.DataSource = null;
             List<Turnos> turnos = obtenerListaTurnosMedico();
             dtvg_turnosLista.DataSource = turnos;
         }
@@ -52,13 +59,15 @@ namespace UIClinica
                 Turnos turno = (Turnos)dtvg_turnosLista.CurrentRow.DataBoundItem;
                 MessageBox.Show($"Se atendio el turno{turno.NroTurno}");
                 medico.DarBajaTurno(turno.NroTurno);
+                
             }
             else
             {
                 MessageBox.Show("Seleccion un paciente");
             }
+            CargarAlDataGrid();
 
-            
+
         }
     }
 }

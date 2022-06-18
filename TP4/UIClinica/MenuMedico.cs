@@ -13,6 +13,8 @@ namespace UIClinica
 {
     public partial class MenuMedico : Form
     {
+        CambiarInformacionDeInicio cambiarInfoMedico;
+        
         Medico medico;
         public MenuMedico()
         {
@@ -23,13 +25,21 @@ namespace UIClinica
         public MenuMedico(Medico medico):this()
         {
             this.medico = medico;
+            cambiarInfoMedico = CambiarLblMedico;
+
         }
 
 
         private void MenuMedico_Load(object sender, EventArgs e)
         {
-            lbl_nombreMedico.Text = medico.Nombre;
+            cambiarInfoMedico.Invoke();
 
+        }
+
+
+        public void CambiarLblMedico()
+        {
+            lbl_nombreMedico.Text = medico.Nombre;
         }
 
         private void btn_atender_Click(object sender, EventArgs e)

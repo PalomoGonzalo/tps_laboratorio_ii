@@ -46,7 +46,7 @@
             this.btnOperar.Location = new System.Drawing.Point(24, 171);
             this.btnOperar.Name = "btnOperar";
             this.btnOperar.Size = new System.Drawing.Size(145, 43);
-            this.btnOperar.TabIndex = 0;
+            this.btnOperar.TabIndex = 4;
             this.btnOperar.Text = "Operar";
             this.btnOperar.UseVisualStyleBackColor = true;
             this.btnOperar.Click += new System.EventHandler(this.btnOperar_Click);
@@ -57,7 +57,7 @@
             this.btn_Limpiar.Location = new System.Drawing.Point(206, 171);
             this.btn_Limpiar.Name = "btn_Limpiar";
             this.btn_Limpiar.Size = new System.Drawing.Size(145, 43);
-            this.btn_Limpiar.TabIndex = 1;
+            this.btn_Limpiar.TabIndex = 5;
             this.btn_Limpiar.Text = "Limpiar";
             this.btn_Limpiar.UseVisualStyleBackColor = true;
             this.btn_Limpiar.Click += new System.EventHandler(this.btn_Limpiar_Click);
@@ -76,7 +76,6 @@
             this.cmbOperador.Name = "cmbOperador";
             this.cmbOperador.Size = new System.Drawing.Size(84, 45);
             this.cmbOperador.TabIndex = 2;
-            this.cmbOperador.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // txtNumero1
             // 
@@ -92,7 +91,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(385, 171);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(145, 43);
-            this.btnCerrar.TabIndex = 3;
+            this.btnCerrar.TabIndex = 6;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -103,17 +102,18 @@
             this.txtNumero2.Location = new System.Drawing.Point(385, 94);
             this.txtNumero2.Name = "txtNumero2";
             this.txtNumero2.Size = new System.Drawing.Size(145, 43);
-            this.txtNumero2.TabIndex = 4;
+            this.txtNumero2.TabIndex = 3;
             // 
             // lblResultado
             // 
             this.lblResultado.AutoSize = true;
             this.lblResultado.BackColor = System.Drawing.Color.Transparent;
-            this.lblResultado.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblResultado.Location = new System.Drawing.Point(440, 36);
+            this.lblResultado.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblResultado.Location = new System.Drawing.Point(385, 36);
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(0, 37);
+            this.lblResultado.Size = new System.Drawing.Size(94, 28);
             this.lblResultado.TabIndex = 5;
+            this.lblResultado.Text = "resultado";
             // 
             // lstOperaciones
             // 
@@ -124,8 +124,8 @@
             this.lstOperaciones.Location = new System.Drawing.Point(557, 36);
             this.lstOperaciones.Name = "lstOperaciones";
             this.lstOperaciones.Size = new System.Drawing.Size(226, 284);
-            this.lstOperaciones.TabIndex = 6;
-            this.lstOperaciones.SelectedIndexChanged += new System.EventHandler(this.lstOperaciones_SelectedIndexChanged);
+            this.lstOperaciones.TabIndex = 99;
+            this.lstOperaciones.TabStop = false;
             // 
             // btnConvertirABinario
             // 

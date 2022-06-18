@@ -71,7 +71,7 @@ namespace UIClinica
             }
             else
             {
-                MessageBox.Show("Seleccion un turno");
+                MessageBox.Show("Seleccione un turno");
             }
         }
     }

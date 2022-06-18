@@ -19,22 +19,22 @@ namespace MiCalculadora
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
-            
-
         }
-
+        /// <summary>
+        /// Muestro en el lbl el resultado que obtengo al utulizar la funcion operar
+        /// y muestro la informacion en el listbox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnOperar_Click(object sender, EventArgs e)
         {
+            string test;
             lblResultado.Text = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text).ToString();
-
-            
-            
             if (cmbOperador.Text == "")
             {
                 cmbOperador.Text = "+";
             }
-          
-            string test = txtNumero1.Text + cmbOperador.Text + txtNumero2.Text + "=" + lblResultado.Text;
+            test = txtNumero1.Text + cmbOperador.Text + txtNumero2.Text + "=" + lblResultado.Text;
             lstOperaciones.Items.Add(test);
             cmbOperador.ResetText();
         }
@@ -42,56 +42,41 @@ namespace MiCalculadora
         private void MiCalculadora_Load(object sender, EventArgs e)
         {
             this.Limpiar();
-            
         }
 
-
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             this.Limpiar();
         }
+        /// <summary>
+        /// limpio los lbl txtbox y listbox
+        /// </summary>
         private void Limpiar()
         { 
             lblResultado.ResetText();
             cmbOperador.ResetText();
             txtNumero1.Clear();
             txtNumero2.Clear();
-            lstOperaciones.Items.Clear();
-        
+            lstOperaciones.Items.Clear();   
         }
 
         private static double Operar(string numero1, string numero2, string operador)
         {
             double resultado = 0;
             resultado=Calculadora.Operar(new Operando(numero1), new Operando(numero2), operador.FirstOrDefault());
-
             return resultado;
-            
-        
-        }
-
-        private void lstOperaciones_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
         }
+
+
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("¿Deseas salir del programa ?", "Cerrar Programa", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-
                 this.Close();
-
-            }
-
-            
-            //this.Close();
+            }       
         }
 
         private void btnConvertirABinario_Click(object sender, EventArgs e)
@@ -108,9 +93,7 @@ namespace MiCalculadora
         {
             if (MessageBox.Show("¿Deseas salir del programa ?", "Cerrar Programa", MessageBoxButtons.YesNo) == DialogResult.No)
             {
-
                 e.Cancel = true;
-
             }
         }
     }

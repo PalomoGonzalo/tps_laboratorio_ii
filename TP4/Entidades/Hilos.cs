@@ -39,7 +39,16 @@ namespace Entidades
             await task2;
             Task task3=new Task(ManejadorDeDatos.GuardarListaClientesASql);
 
-            task3.Start();  
+            try
+            {
+
+                task3.Start();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
 
         }
     }

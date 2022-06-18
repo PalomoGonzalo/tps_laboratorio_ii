@@ -87,7 +87,7 @@ namespace UIClinica
 
         private void btn_clienteLog_Click(object sender, EventArgs e)
         {
-
+            txt_legajo.Text = "1";
         }
     }
 }
