@@ -32,6 +32,7 @@ namespace Entidades
             sb.AppendLine($"{base.Mostrar()}");
             sb.AppendLine("");
             sb.AppendLine("---------------------");
+           
 
             return sb.ToString();
         }

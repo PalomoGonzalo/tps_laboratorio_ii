@@ -54,6 +54,8 @@ namespace Entidades
             sb.AppendLine($"MARCA : {p.marca.ToString()}");
             sb.AppendLine($"COLOR : {p.color.ToString()}");
             sb.AppendLine("---------------------");
+            sb.AppendLine($"TAMAÑO:{p.Tamanio}");
+            sb.AppendLine("---------------------");
 
             return sb.ToString();
         }
