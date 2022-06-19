@@ -23,7 +23,7 @@ namespace Entidades
         {
             this.vehiculos = new List<Vehiculo>();
         }
-        public Taller(int espacioDisponible):this()
+        public Taller(int espacioDisponible) : this()
         {
             this.espacioDisponible = espacioDisponible;
         }
@@ -37,7 +37,7 @@ namespace Entidades
         public override string ToString()
         {
             return Listar(this, ETipo.Todos);
-            
+
         }
         #endregion
 
@@ -88,12 +88,17 @@ namespace Entidades
         /// <returns></returns>
         public static Taller operator +(Taller taller, Vehiculo vehiculo)
         {
-            foreach (Vehiculo v in taller.vehiculos)
+            if (taller.espacioDisponible > taller.vehiculos.Count)
             {
-                if (v == vehiculo)
-                    return taller;
+                foreach (Vehiculo v in taller.vehiculos)
+                {
+                    if (v == vehiculo)
+                        return taller;
+                }
+                taller.vehiculos.Add(vehiculo);
             }
-            taller.vehiculos.Add(vehiculo);
+
+
             return taller;
         }
         /// <summary>
