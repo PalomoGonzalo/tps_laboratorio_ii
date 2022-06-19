@@ -13,7 +13,12 @@ namespace UIClinica
 {
     public partial class MenuAtenderCliente : Form
     {
+
+        event MostrarProximoTurno eventoProximoTurno;
+        event CargarDatos eventoCargaDatosAlDataGrid;
+        List<Turnos> turnos;
         Medico medico;
+        Turnos turnoSiguiente;
         public MenuAtenderCliente()
         {
             InitializeComponent();
@@ -26,17 +31,52 @@ namespace UIClinica
 
         private void MenuAtenderCliente_Load(object sender, EventArgs e)
         {
-            
-            CargarAlDataGrid();
-        }
 
+            eventoCargaDatosAlDataGrid = CargarAlDataGrid;
+            eventoCargaDatosAlDataGrid.Invoke();
+            eventoProximoTurno.Invoke(turnoSiguiente);
+
+        }
+        /// <summary>
+        /// cargo al data grid la lista filtrada de turnos
+        /// </summary>
         private void CargarAlDataGrid()
         {
             dtvg_turnosLista.DataSource = null;
-            List<Turnos> turnos = obtenerListaTurnosMedico();
+            turnos = obtenerListaTurnosMedico();
             dtvg_turnosLista.DataSource = turnos;
+            turnoSiguiente=TurnoMasCercano(turnos);
+            eventoProximoTurno = MostrarProximoTurnoPorMensaje;
+
+
         }
 
+        private void MostrarProximoTurnoPorMensaje(Turnos turno)
+        {
+            MessageBox.Show($"El proximo turno a atender es el numero: {turno.NroTurno}");
+        }
+
+        private Turnos TurnoMasCercano(List<Turnos> turnosFiltrada)
+        {
+            Turnos turnoAux = null;
+            DateTime dateTimeMinimo = DateTime.MaxValue;
+            foreach (var item in turnosFiltrada)
+            {
+                if (dateTimeMinimo>item.FechaTurno)
+                {
+                    dateTimeMinimo = item.FechaTurno;
+                    turnoAux = item;
+                }  
+            }
+            return turnoAux;
+        
+        }
+
+
+        /// <summary>
+        /// Obtengo los turnos filtrado por el id medico y retorno esa lista
+        /// </summary>
+        /// <returns></returns>
         private List<Turnos> obtenerListaTurnosMedico()
         {
             dtvg_turnosLista.Rows.Clear();
@@ -51,22 +91,27 @@ namespace UIClinica
             }
             return turnosAux;         
         }
-
+        /// <summary>
+        /// Atiendo el cliente seleccionado en el data grid 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_atenderCliente_Click(object sender, EventArgs e)
         {
             if (dtvg_turnosLista.SelectedRows.Count>0)
             {
                 Turnos turno = (Turnos)dtvg_turnosLista.CurrentRow.DataBoundItem;
                 MessageBox.Show($"Se atendio el turno{turno.NroTurno}");
-                medico.DarBajaTurno(turno.NroTurno);
-                
+                medico.AtenderCliente(turno.NroTurno);              
             }
             else
             {
-                MessageBox.Show("Seleccion un paciente");
+                MessageBox.Show("Seleccione un paciente");
             }
-            CargarAlDataGrid();
 
+            eventoCargaDatosAlDataGrid.Invoke();
+            turnoSiguiente = TurnoMasCercano(turnos);
+            eventoProximoTurno.Invoke(turnoSiguiente);
 
         }
     }

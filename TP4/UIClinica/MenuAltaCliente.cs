@@ -64,5 +64,7 @@ namespace UIClinica
                 MessageBox.Show("Complete todos los datos");
             }
         }
+
+
     }
 }

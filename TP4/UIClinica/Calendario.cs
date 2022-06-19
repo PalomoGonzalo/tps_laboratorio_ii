@@ -63,7 +63,7 @@ namespace UIClinica
             }
             for (int i = 1; i <= days; i++)
             {
-                UserControlDays ucdays = new UserControlDays(medico,cliente);
+                UserControlDays ucdays = new UserControlDays(medico,cliente,this);
                 ucdays.days(i);
                 PanelControl.Controls.Add(ucdays);
             }
@@ -86,7 +86,7 @@ namespace UIClinica
             }
             for (int i = 1; i <= days; i++)
             {
-                UserControlDays ucdays = new UserControlDays(medico,cliente);
+                UserControlDays ucdays = new UserControlDays(medico,cliente,this);
                 ucdays.days(i);
                 PanelControl.Controls.Add(ucdays);
             }

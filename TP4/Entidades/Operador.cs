@@ -17,14 +17,10 @@ namespace Entidades
 
         public bool EsAdmin { get => esAdmin; set => esAdmin = value; }
 
-        public override Cliente verHistorialCliente(List<Cliente> listaClientes, int dniCliente)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public bool agregarCliente(Cliente cliente)
         {
-
             if (cliente != null)
             {
                 ManejadorDeDatos.ClienteList.Add(cliente);

@@ -49,9 +49,6 @@ namespace UIClinica
 
         }
 
-        private void lbl_nombreMedico_Click(object sender, EventArgs e)
-        {
 
-        }
     }
 }

@@ -28,12 +28,27 @@ namespace Entidades
         }
 
         public string TipoMedico { get => tipoMedico; set => tipoMedico = value; }
-       
 
-        public override Cliente verHistorialCliente(List<Cliente> listaClientes, int dniCliente)
+
+        /// <summary>
+        /// Atiendo el cliente y lo agrego a la lista de turnos atendidos
+        /// </summary>
+        /// <param name="nroTurno"></param>
+        /// <returns></returns>
+        public bool AtenderCliente(int nroTurno)
         {
-            throw new NotImplementedException();
+            foreach (var item in ManejadorDeDatos.TurnosList)
+            {
+                if (nroTurno + item)
+                {
+                    ManejadorDeDatos.TurnosAtendidosList.Add(item);
+                    ManejadorDeDatos.TurnosList.Remove(item);
+                    return true;
+                }
+            }
+            return false;
         }
+
         public static bool operator +(int s1, Medico medico)
         {
             if (s1 == medico.Id)
@@ -42,6 +57,8 @@ namespace Entidades
             }
             return false;
         }
+
+
 
 
 

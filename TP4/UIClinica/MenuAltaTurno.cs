@@ -48,7 +48,9 @@ namespace UIClinica
             button8.Click += EventoBotonGeneral_Click;
             button9.Click += EventoBotonGeneral_Click;
         }
-
+        /// <summary>
+        /// Con la funcion ExisteHoraCargada si devuelve true pinto el bonton en rojo y lo desactivo
+        /// </summary>
         public void cargarEstadoHorarioDisponible()
         {
             foreach (Control c in this.Controls)
@@ -64,12 +66,15 @@ namespace UIClinica
 
                     }
                 }
-
-
             }
-
-
         }
+
+        /// <summary>
+        /// Agrego los botones.click que utilizo para las horas a un evento general 
+        /// Y Creo un nuevo turno, obtieniendo automaticamente el nro de turno
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void EventoBotonGeneral_Click(object sender, EventArgs e)
         {
             var control = sender as Button;
@@ -77,13 +82,20 @@ namespace UIClinica
             ManejadorDeDatos.PasarStringNumeros(descripcionBoton, out int hora);
             int nroTurno = ManejadorDeDatos.ObtenerUltimoTurno() + 1;
 
+
             Turnos turnoNuevo = new Turnos(nroTurno,medico.Id,hora,time,cliente.Dni);
             ManejadorDeDatos.TurnosList.Add(turnoNuevo);
             MessageBox.Show($"Se dio de alta correctamente el turno {turnoNuevo.NroTurno}");
+            this.DialogResult = DialogResult.OK;
             this.Close();
 
         }
-
+        /// <summary>
+        /// Verifica en la lista de turnos, filtrando el id del medico, la fecha de turno
+        /// y la hora que se relaciona con el boton.text que tiene.
+        /// </summary>
+        /// <param name="butonNombre"></param>
+        /// <returns></returns>
         private Boolean ExisteHoraraCargada(string butonNombre)
         {
             foreach (var item in ManejadorDeDatos.TurnosList)

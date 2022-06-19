@@ -79,9 +79,6 @@ namespace UIClinica
             }
         }
 
-        private void MenuElegirCliente_Load(object sender, EventArgs e)
-        {
 
-        }
     }
 }

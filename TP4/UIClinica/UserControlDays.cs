@@ -15,14 +15,16 @@ namespace UIClinica
     {
         Medico medico;
         Cliente cliente;
+        Calendario frmCalendario;
         public UserControlDays()
         {
             InitializeComponent();
         }
-        public UserControlDays(Medico medico, Cliente cliente) : this()
+        public UserControlDays(Medico medico, Cliente cliente, Calendario calendario) : this()
         {
             this.medico = medico;
             this.cliente = cliente;
+            this.frmCalendario = calendario;
         }
 
 
@@ -39,7 +41,12 @@ namespace UIClinica
             DateTime dt = new DateTime(Calendario.anioEstatico, Calendario.mesEstatico, diaEstatico);
 
             MenuAltaTurno menuAltaTurno = new MenuAltaTurno(medico, dt,cliente);
-            menuAltaTurno.ShowDialog();
+            if (menuAltaTurno.ShowDialog() == DialogResult.OK)
+            {
+                frmCalendario.Close();
+            }
+            
+            
         }
 
         private void UserControlDays_Load(object sender, EventArgs e)

@@ -48,7 +48,7 @@
             this.lbl_nombreMedico.Size = new System.Drawing.Size(140, 28);
             this.lbl_nombreMedico.TabIndex = 16;
             this.lbl_nombreMedico.Text = "NOMBRE MED";
-            this.lbl_nombreMedico.Click += new System.EventHandler(this.lbl_nombreMedico_Click);
+            
             // 
             // label2
             // 

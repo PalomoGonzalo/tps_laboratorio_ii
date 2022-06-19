@@ -13,17 +13,20 @@ namespace Entidades
 
         static List<Personal> personalList;
         static List<Turnos> turnosList;
+        static List<Turnos> turnosAtendidosList;
 
         static ManejadorDeDatos()
         {
             ClienteList = new List<Cliente>();
             PersonalList = new List<Personal>();
             TurnosList = new List<Turnos>();
+            turnosAtendidosList = new List<Turnos>();
         }
 
         public static List<Cliente> ClienteList { get => clienteList; set => clienteList = value; }
         public static List<Personal> PersonalList { get => personalList; set => personalList = value; }
         public static List<Turnos> TurnosList { get => turnosList; set => turnosList = value; }
+        public static List<Turnos> TurnosAtendidosList { get => turnosAtendidosList; set => turnosAtendidosList = value; }
 
         public static Medico CheckearLoginMedico(string password, int id)
         {
