@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
+using Microsoft.VisualBasic;
 
 namespace UIClinica
 {
@@ -49,6 +50,25 @@ namespace UIClinica
 
         }
 
+        private void btn_listaEmpleados_Click(object sender, EventArgs e)
+        {
+            string legajoString = Interaction.InputBox("ingrese el dni del cliente para cancelar el turno");
+            if (ManejadorDeDatos.PasarStringNumeros(legajoString, out int id))
+            {
+                Cliente miCliente = ManejadorDeDatos.CheckearLoginCliente(id);
+                if (miCliente != null)
+                {
+                    CancelarTurno cancelarTurno = new CancelarTurno(miCliente, medico);
+                    cancelarTurno.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Error no existe ese dni");
+                }
 
+
+
+            }
+        }
     }
 }

@@ -51,5 +51,21 @@ namespace Entidades
             }
 
         }
+        public static void GuardarClientes(Cliente cliente)
+        {
+
+            Task task = new Task(() => { SqlConexion.GuardarClientesASql(cliente); });
+            try
+            {
+                task.Start();
+            }
+            catch (Exception)
+            {
+
+                throw new Exception($"Error al cargar el hilo");
+            }
+        }
+
+
     }
 }

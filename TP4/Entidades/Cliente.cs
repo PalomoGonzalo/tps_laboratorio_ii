@@ -28,16 +28,7 @@ namespace Entidades
         public int Edad { get => edad; set => edad = value; }
 
 
-        public string MostrarInfo()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine($"Dni: {dni}");
-            sb.AppendLine($"Nombre:{ nombre} ");
-            sb.AppendLine($"Edad: {edad}");
-            return sb.ToString();
 
-
-        }
         public static bool operator +(int s1, Cliente cliente)
         {
             if (s1 == cliente.dni)
@@ -60,7 +51,21 @@ namespace Entidades
             return false;
         }
 
-        
+        public List<Turnos> VerHistorialClienteTurnos(List<Turnos> turnos, int dniCliente)
+        {
+            List<Turnos> turnoFiltro = new List<Turnos>();
+            foreach (var item in turnos)
+            {
+                if (dniCliente ==item.DniCliente)
+                {
+                    turnoFiltro.Add(item);
+                }
+            }
+            return turnoFiltro;
+
+        }
+
+
 
 
 

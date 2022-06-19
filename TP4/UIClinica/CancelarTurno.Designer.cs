@@ -1,6 +1,6 @@
 ﻿namespace UIClinica
 {
-    partial class MenuCliente
+    partial class CancelarTurno
     {
         /// <summary>
         /// Required designer variable.
@@ -31,52 +31,26 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.btn_aceptarCancelar = new System.Windows.Forms.Button();
+            this.dtvg_clienteTurno = new System.Windows.Forms.DataGridView();
             this.lbl_nombreCliente = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_cancelarTurno = new System.Windows.Forms.Button();
-            this.dtvg_clienteTurno = new System.Windows.Forms.DataGridView();
-            this.btn_aceptarCancelar = new System.Windows.Forms.Button();
-            this.btn_historialTurnos = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtvg_clienteTurno)).BeginInit();
             this.SuspendLayout();
             // 
-            // lbl_nombreCliente
+            // btn_aceptarCancelar
             // 
-            this.lbl_nombreCliente.AutoSize = true;
-            this.lbl_nombreCliente.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_nombreCliente.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_nombreCliente.ForeColor = System.Drawing.Color.White;
-            this.lbl_nombreCliente.Location = new System.Drawing.Point(95, 9);
-            this.lbl_nombreCliente.Name = "lbl_nombreCliente";
-            this.lbl_nombreCliente.Size = new System.Drawing.Size(124, 28);
-            this.lbl_nombreCliente.TabIndex = 15;
-            this.lbl_nombreCliente.Text = "NOMBRE CLI";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 28);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "CLIENTE:";
-            // 
-            // btn_cancelarTurno
-            // 
-            this.btn_cancelarTurno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(129)))));
-            this.btn_cancelarTurno.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_cancelarTurno.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_cancelarTurno.ForeColor = System.Drawing.Color.White;
-            this.btn_cancelarTurno.Location = new System.Drawing.Point(12, 76);
-            this.btn_cancelarTurno.Name = "btn_cancelarTurno";
-            this.btn_cancelarTurno.Size = new System.Drawing.Size(207, 39);
-            this.btn_cancelarTurno.TabIndex = 17;
-            this.btn_cancelarTurno.Text = "CANCELAR TURNO";
-            this.btn_cancelarTurno.UseVisualStyleBackColor = false;
-            this.btn_cancelarTurno.Click += new System.EventHandler(this.btn_cancelarTurno_Click);
+            this.btn_aceptarCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(129)))));
+            this.btn_aceptarCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_aceptarCancelar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_aceptarCancelar.ForeColor = System.Drawing.Color.White;
+            this.btn_aceptarCancelar.Location = new System.Drawing.Point(12, 489);
+            this.btn_aceptarCancelar.Name = "btn_aceptarCancelar";
+            this.btn_aceptarCancelar.Size = new System.Drawing.Size(207, 39);
+            this.btn_aceptarCancelar.TabIndex = 39;
+            this.btn_aceptarCancelar.Text = "CANCELAR TURNO";
+            this.btn_aceptarCancelar.UseVisualStyleBackColor = false;
+            this.btn_aceptarCancelar.Click += new System.EventHandler(this.btn_aceptarCancelar_Click);
             // 
             // dtvg_clienteTurno
             // 
@@ -120,52 +94,46 @@
             this.dtvg_clienteTurno.RowTemplate.Height = 25;
             this.dtvg_clienteTurno.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtvg_clienteTurno.Size = new System.Drawing.Size(613, 338);
-            this.dtvg_clienteTurno.TabIndex = 34;
+            this.dtvg_clienteTurno.TabIndex = 38;
             // 
-            // btn_aceptarCancelar
+            // lbl_nombreCliente
             // 
-            this.btn_aceptarCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(129)))));
-            this.btn_aceptarCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_aceptarCancelar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_aceptarCancelar.ForeColor = System.Drawing.Color.White;
-            this.btn_aceptarCancelar.Location = new System.Drawing.Point(12, 489);
-            this.btn_aceptarCancelar.Name = "btn_aceptarCancelar";
-            this.btn_aceptarCancelar.Size = new System.Drawing.Size(207, 39);
-            this.btn_aceptarCancelar.TabIndex = 35;
-            this.btn_aceptarCancelar.Text = "ACEPTAR";
-            this.btn_aceptarCancelar.UseVisualStyleBackColor = false;
-            this.btn_aceptarCancelar.Click += new System.EventHandler(this.btn_aceptarCancelar_Click);
+            this.lbl_nombreCliente.AutoSize = true;
+            this.lbl_nombreCliente.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_nombreCliente.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_nombreCliente.ForeColor = System.Drawing.Color.White;
+            this.lbl_nombreCliente.Location = new System.Drawing.Point(95, 9);
+            this.lbl_nombreCliente.Name = "lbl_nombreCliente";
+            this.lbl_nombreCliente.Size = new System.Drawing.Size(124, 28);
+            this.lbl_nombreCliente.TabIndex = 36;
+            this.lbl_nombreCliente.Text = "NOMBRE CLI";
             // 
-            // btn_historialTurnos
+            // label2
             // 
-            this.btn_historialTurnos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(129)))));
-            this.btn_historialTurnos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_historialTurnos.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_historialTurnos.ForeColor = System.Drawing.Color.White;
-            this.btn_historialTurnos.Location = new System.Drawing.Point(258, 76);
-            this.btn_historialTurnos.Name = "btn_historialTurnos";
-            this.btn_historialTurnos.Size = new System.Drawing.Size(207, 39);
-            this.btn_historialTurnos.TabIndex = 36;
-            this.btn_historialTurnos.Text = "HISTORIAL TURNOS";
-            this.btn_historialTurnos.UseVisualStyleBackColor = false;
-            this.btn_historialTurnos.Click += new System.EventHandler(this.btn_historialTurnos_Click);
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 28);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "CLIENTE:";
             // 
-            // MenuCliente
+            // CancelarTurno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(58)))), ((int)(((byte)(81)))));
-            this.ClientSize = new System.Drawing.Size(683, 569);
-            this.Controls.Add(this.btn_historialTurnos);
+            this.ClientSize = new System.Drawing.Size(649, 559);
             this.Controls.Add(this.btn_aceptarCancelar);
             this.Controls.Add(this.dtvg_clienteTurno);
-            this.Controls.Add(this.btn_cancelarTurno);
             this.Controls.Add(this.lbl_nombreCliente);
             this.Controls.Add(this.label2);
-            this.Name = "MenuCliente";
+            this.Name = "CancelarTurno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MenuCliente";
-            this.Load += new System.EventHandler(this.MenuCliente_Load);
+            this.Text = "CancelarTurno";
+            this.Load += new System.EventHandler(this.CancelarTurno_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtvg_clienteTurno)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -174,11 +142,9 @@
 
         #endregion
 
+        private System.Windows.Forms.Button btn_aceptarCancelar;
+        private System.Windows.Forms.DataGridView dtvg_clienteTurno;
         private System.Windows.Forms.Label lbl_nombreCliente;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btn_cancelarTurno;
-        private System.Windows.Forms.DataGridView dtvg_clienteTurno;
-        private System.Windows.Forms.Button btn_aceptarCancelar;
-        private System.Windows.Forms.Button btn_historialTurnos;
     }
 }

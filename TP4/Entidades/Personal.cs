@@ -40,19 +40,7 @@ namespace Entidades
             return false;
         }
 
-        public List<Cliente> VerHistorialClienteTurnos(List<Cliente> listaClientes, int dniCliente)
-        {
-            List <Cliente> clientesFiltro = new List<Cliente>();
-            foreach (var item in listaClientes)
-            {
-                if (dniCliente+item)
-                {
-                    clientesFiltro.Add(item);
-                }
-            }
-            return clientesFiltro;
-            
-        }
+        
 
 
 

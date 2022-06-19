@@ -24,38 +24,19 @@ namespace UIClinica
         {
             dtvg_clienteTurno.Visible = false;
             btn_aceptarCancelar.Visible = false;
-            
-        }
-
-        private List<Turnos> ObtenerListaTurnosCliente()
-        {
-            
-            List<Turnos> turnosAux = new List<Turnos>();
-
-            foreach (var item in ManejadorDeDatos.TurnosList)
-            {
-                if (item.DniCliente == cliente.Dni)
-                {
-                    turnosAux.Add(item);
-                }
-            }
-            return turnosAux;
+            lbl_nombreCliente.Text = cliente.Nombre.ToUpper();   
         }
 
 
         private void CargarTurnosClienteAldata()
-        {
-
-            List<Turnos> turnos = ObtenerListaTurnosCliente();
-            dtvg_clienteTurno.DataSource = turnos;
+        {       
+            dtvg_clienteTurno.DataSource = cliente.VerHistorialClienteTurnos(ManejadorDeDatos.TurnosList, cliente.Dni);
         }
 
         private void btn_cancelarTurno_Click(object sender, EventArgs e)
         {
-            btn_cancelarTurno.Visible = false;
             dtvg_clienteTurno.Visible = true;
             btn_aceptarCancelar.Visible = true;
-            dtvg_clienteTurno.Rows.Clear();
             CargarTurnosClienteAldata();
         }
 
@@ -73,6 +54,13 @@ namespace UIClinica
             {
                 MessageBox.Show("Seleccione un turno");
             }
+        }
+
+        private void btn_historialTurnos_Click(object sender, EventArgs e)
+        {
+            btn_aceptarCancelar.Visible=false;
+            dtvg_clienteTurno.Visible=true;
+            dtvg_clienteTurno.DataSource = cliente.VerHistorialClienteTurnos(ManejadorDeDatos.TurnosList, cliente.Dni);
         }
     }
 }

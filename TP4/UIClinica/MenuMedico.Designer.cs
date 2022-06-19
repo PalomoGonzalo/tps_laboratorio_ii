@@ -32,7 +32,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_atender = new System.Windows.Forms.Button();
-            this.btn_listaInventario = new System.Windows.Forms.Button();
             this.btn_listaEmpleados = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -48,7 +47,6 @@
             this.lbl_nombreMedico.Size = new System.Drawing.Size(140, 28);
             this.lbl_nombreMedico.TabIndex = 16;
             this.lbl_nombreMedico.Text = "NOMBRE MED";
-            
             // 
             // label2
             // 
@@ -65,7 +63,6 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btn_atender);
-            this.panel1.Controls.Add(this.btn_listaInventario);
             this.panel1.Controls.Add(this.btn_listaEmpleados);
             this.panel1.Location = new System.Drawing.Point(12, 76);
             this.panel1.Name = "panel1";
@@ -87,20 +84,6 @@
             this.btn_atender.UseVisualStyleBackColor = false;
             this.btn_atender.Click += new System.EventHandler(this.btn_atender_Click);
             // 
-            // btn_listaInventario
-            // 
-            this.btn_listaInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(129)))));
-            this.btn_listaInventario.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_listaInventario.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_listaInventario.ForeColor = System.Drawing.Color.White;
-            this.btn_listaInventario.Location = new System.Drawing.Point(14, 331);
-            this.btn_listaInventario.Name = "btn_listaInventario";
-            this.btn_listaInventario.Size = new System.Drawing.Size(169, 39);
-            this.btn_listaInventario.TabIndex = 12;
-            this.btn_listaInventario.Text = "Lista inventario";
-            this.btn_listaInventario.UseVisualStyleBackColor = false;
-            this.btn_listaInventario.Visible = false;
-            // 
             // btn_listaEmpleados
             // 
             this.btn_listaEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(129)))));
@@ -112,8 +95,9 @@
             this.btn_listaEmpleados.Name = "btn_listaEmpleados";
             this.btn_listaEmpleados.Size = new System.Drawing.Size(169, 39);
             this.btn_listaEmpleados.TabIndex = 11;
-            this.btn_listaEmpleados.Text = "Lista Empleados";
+            this.btn_listaEmpleados.Text = "Cancelar Turno";
             this.btn_listaEmpleados.UseVisualStyleBackColor = false;
+            this.btn_listaEmpleados.Click += new System.EventHandler(this.btn_listaEmpleados_Click);
             // 
             // MenuMedico
             // 
@@ -140,7 +124,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_atender;
-        private System.Windows.Forms.Button btn_listaInventario;
         private System.Windows.Forms.Button btn_listaEmpleados;
     }
 }

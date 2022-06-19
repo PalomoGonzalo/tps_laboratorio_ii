@@ -35,7 +35,9 @@ namespace UIClinica
             lbl_fecha.Text = time.ToShortDateString();
             lbl_nombreMedico.Text = medico.Nombre;
         }
-
+        /// <summary>
+        /// sobrecargo el evento click de los botones con la funcion eventobotongeneral_click
+        /// </summary>
         private void cargarBoton()
         {
             button1.Click += EventoBotonGeneral_Click;
