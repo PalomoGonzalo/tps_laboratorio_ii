@@ -39,6 +39,7 @@ namespace UIClinica
         }
         /// <summary>
         /// cargo al data grid la lista filtrada de turnos
+        /// y guardo la informacion del turno siguiente
         /// </summary>
         private void CargarAlDataGrid()
         {
@@ -55,7 +56,11 @@ namespace UIClinica
         {
             MessageBox.Show($"El proximo turno a atender es el numero: {turno.NroTurno}");
         }
-
+        /// <summary>
+        /// Obtengo el turno mas cercano
+        /// </summary>
+        /// <param name="turnosFiltrada"></param>
+        /// <returns></returns>
         private Turnos TurnoMasCercano(List<Turnos> turnosFiltrada)
         {
             Turnos turnoAux = null;
