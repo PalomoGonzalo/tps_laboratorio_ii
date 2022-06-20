@@ -94,12 +94,23 @@ namespace UIClinica
 
         private void btn_siguiente_Click(object sender, EventArgs e)
         {
+            if (mes == 12)
+            {
+                anio++;
+                mes = 0;
+            }
             mes++;
             CargarDias(mes);
+           
         }
 
         private void btn_atras_Click(object sender, EventArgs e)
         {
+            if (mes == 1)
+            { 
+                anio--;
+                mes = 13;
+            }
             mes--;
             CargarDias(mes);
         }
